@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundCloud Integration</title>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+</head>
+<body>
+    <h1>SoundCloud Playlists</h1>
+    <div id="player"></div>
+    <script>
+        SC.initialize({
+          client_id: 'YOUR_CLIENT_ID'
+        });
+
+        SC.get('/playlists').then(function(playlists) {
+          playlists.forEach(function(playlist) {
+            const player = document.createElement('iframe');
+            player.setAttribute('width', '100%');
+            player.setAttribute('height', '166');
+            player.setAttribute('scrolling', 'no');
+            player.src = 'https://w.soundcloud.com/player/?url=' + playlist.uri;
+            document.getElementById('player').appendChild(player);
+          });
+        });
+    </script>
+</body>
+</html>
