@@ -1,0 +1,55 @@
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #001f33;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #71c5ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background: linear-gradient(45deg, #005082, #0094d8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #0094d8, #005082);
+    transform: scale(1.05);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .button {
+        width: 100%;
+    }
+}
