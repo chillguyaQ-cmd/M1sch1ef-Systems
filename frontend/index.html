@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00003f, #000080);
+            color: white;
+            overflow: hidden;
+        }
+        header {
+            background-color: rgba(0, 0, 128, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            height: 100vh;
+            background: url('animated-background.gif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background: rgba(0, 0, 128, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Proxy</a></li>
+                <li><a href="#">Chat</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Cloud Accounts</a></li>
+                <li><a href="#">YouTube Integration</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Welcome to the Gaming Hub!</h1>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Games</h3>
+            <p>Explore the latest and greatest games available.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Proxy</h3>
+            <p>Stay anonymous while you browse.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Chat</h3>
+            <p>Connect with friends and other gamers.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Music</h3>
+            <p>Listen to your favorite tracks while gaming.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Cloud Accounts</h3>
+            <p>Access your games from anywhere.</p>
+        </div>
+        <div class="feature-card">
+            <h3>YouTube Integration</h3>
+            <p>Watch gaming streams and videos.</p>
+        </div>
+    </div>
+</body>
+</html>
