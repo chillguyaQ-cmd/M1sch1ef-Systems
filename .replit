@@ -1,0 +1,7 @@
+# This is a Replit configuration file
+
+# Specifies the run command
+run = "python main.py"  
+
+# If you have a specific version of Python, specify it here
+language = "python"  
