@@ -1,0 +1,9 @@
+# Wrangler Configuration
+
+name = "my-worker"
+build = "build"
+compatibility_date = "2026-02-27"
+
+[[routings]]
+pattern = "*"
+destination = "my-worker"
