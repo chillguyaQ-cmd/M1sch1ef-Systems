@@ -1,0 +1,1 @@
+{"version": 2, "functions": {"api/hello.js": {"memory": 128, "maxDuration": 10}}}
