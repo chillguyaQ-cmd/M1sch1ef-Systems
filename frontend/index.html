@@ -3,106 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Website Homepage</title>
+    <title>M1sch1ef Systems - Gaming Hub</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #00003f, #000080);
-            color: white;
-            overflow: hidden;
-        }
-        header {
-            background-color: rgba(0, 0, 128, 0.7);
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style-type: none;
             padding: 0;
+            box-sizing: border-box;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0a1929, #132f4c, #0d47a1, #1a237e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            color: #e0e0e0;
+            overflow-x: hidden;
         }
-        nav a {
-            color: white;
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(10, 25, 41, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(13, 71, 161, 0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #42a5f5;
             text-decoration: none;
         }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #b3e5fc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #42a5f5;
+        }
+
+        /* Hero Section */
         .hero {
-            height: 100vh;
-            background: url('animated-background.gif') no-repeat center center fixed;
-            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 60vh;
             text-align: center;
+            padding: 2rem;
         }
-        .hero h1 {
-            font-size: 48px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #42a5f5;
+            text-shadow: 0 0 20px rgba(66, 165, 245, 0.5);
+            animation: fadeInDown 1s ease;
         }
-        .features {
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #b3e5fc;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-buttons {
             display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
         }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #0d47a1;
+            color: #fff;
+            border: 2px solid #42a5f5;
+        }
+
+        .btn-primary:hover {
+            background: #42a5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(66, 165, 245, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #42a5f5;
+            border: 2px solid #42a5f5;
+        }
+
+        .btn-secondary:hover {
+            background: #42a5f5;
+            color: #0a1929;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .feature-card {
-            background: rgba(0, 0, 128, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            width: 200px;
+            background: rgba(19, 47, 76, 0.6);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
             text-align: center;
-            margin: 10px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #42a5f5;
+            background: rgba(13, 71, 161, 0.4);
+            box-shadow: 0 10px 30px rgba(66, 165, 245, 0.2);
+        }
+
+        .feature-card h3 {
+            color: #42a5f5;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #b3e5fc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(10, 25, 41, 0.7);
+            border-top: 1px solid rgba(13, 71, 161, 0.3);
+            color: #90caf9;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Proxy</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Cloud Accounts</a></li>
-                <li><a href="#">YouTube Integration</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="hero">
-        <h1>Welcome to the Gaming Hub!</h1>
-    </div>
-    <div class="features">
+    <nav>
+        <a href="#" class="logo">M1sch1ef Systems</a>
+        <ul>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#proxy">Proxy</a></li>
+            <li><a href="#chat">Chat</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#account">Account</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>M1sch1ef Systems</h1>
+            <p>Your Ultimate Gaming & Entertainment Hub</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Explore Games</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
         <div class="feature-card">
-            <h3>Games</h3>
-            <p>Explore the latest and greatest games available.</p>
+            <h3>🎮 Games</h3>
+            <p>Access thousands of games from top sources, all in one place</p>
         </div>
         <div class="feature-card">
-            <h3>Proxy</h3>
-            <p>Stay anonymous while you browse.</p>
+            <h3>🔒 Proxy</h3>
+            <p>Secure ultraviolet proxy for unrestricted access</p>
         </div>
         <div class="feature-card">
-            <h3>Chat</h3>
-            <p>Connect with friends and other gamers.</p>
+            <h3>💬 Chat</h3>
+            <p>AI-powered and global chat for instant conversations</p>
         </div>
         <div class="feature-card">
-            <h3>Music</h3>
-            <p>Listen to your favorite tracks while gaming.</p>
+            <h3>🎵 Music</h3>
+            <p>Stream and discover your favorite music</p>
         </div>
         <div class="feature-card">
-            <h3>Cloud Accounts</h3>
-            <p>Access your games from anywhere.</p>
+            <h3>☁️ Cloud</h3>
+            <p>Sync your accounts and data across all devices</p>
         </div>
         <div class="feature-card">
-            <h3>YouTube Integration</h3>
-            <p>Watch gaming streams and videos.</p>
+            <h3>📺 YouTube</h3>
+            <p>Watch and share your favorite videos</p>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 M1sch1ef Systems. All rights reserved.</p>
+    </footer>
 </body>
 </html>
